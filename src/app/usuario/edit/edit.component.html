@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()">
+ 
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="user.nome" name="nome" />
+  </div>
+ 
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Número da Matrícula" [(ngModel)]="user.matricula" name="matricula" />
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Cargo" [(ngModel)]="user.cargo" name="cargo" />
+  </div>
+  
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email" />
+  </div>
+
+  <div class="form-group">
+    <input type="tel" class="form-control" placeholder="Telefone" [(ngModel)]="user.telefone" name="telefone" />
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="user.senha" name="senha" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+  <a routerLink="/login">Voltar</a>
+</form>

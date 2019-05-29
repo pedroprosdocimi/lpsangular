@@ -1,0 +1,115 @@
+<div *ngIf="estaLogado"> 
+  <form>
+    
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Número da Matrícula"  name="mat" />
+    </div>
+  
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Senha"  name="se" />
+    </div>
+  
+    <button type="submit" class="btn btn-primary" (click)='aoEntrar()'>Entrar</button>
+    <a routerLink="/edit">Novo Usuário</a>
+  </form>
+</div>
+<div *ngIf="!estaLogado">
+
+  <div *ngIf="admin">
+      <div>        
+        <div>
+          <label>Bem vindo, Admin</label>
+          <button style="margin-left:2%;margin-right: 2%" class="btn btn-primary" (click)="deslogar()">Logout</button>
+        </div>
+
+        <div style="margin-top: 5%">
+            <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="cadastrarTurma()">Cadastrar Turma</button>
+            <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="associarUsuarios()">Associar Usuários</button>
+            <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="gerenciarUsuarios()">Gerenciar Usuários</button>
+            
+            <div *ngIf="cadastrarTurmaA" style="margin-top: 5%">
+              <app-cadastrar-turma></app-cadastrar-turma>
+            </div>
+    
+            <div *ngIf="associarUsuariosA" style="margin-top: 5%">
+              <app-associar-usuarios></app-associar-usuarios>
+            </div>
+    
+            <div *ngIf="gerenciarUsuariosA" style="margin-top: 5%">
+              <app-gerenciar-usuarios></app-gerenciar-usuarios>
+            </div>
+        </div>
+        
+
+      </div>
+
+  </div>
+
+  <div *ngIf="professor">
+
+    <div>
+      <label>Bem vindo, Professor</label>
+      <button style="margin-left:2%;margin-right: 2%" class="btn btn-primary" (click)="deslogar()">Logout</button>
+    </div>
+    
+    <div style="margin-top: 5%">
+
+      <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="submeterProf()">Submissões</button>
+      
+      <div *ngIf="submeterProfA" style="margin-top: 5%">
+        <app-submeter></app-submeter>
+      </div>
+
+    </div>
+    
+
+  </div>
+
+  <div *ngIf="aluno">
+
+    <div>
+      <label>Bem vindo, Aluno</label>
+      <button style="margin-left:2%;margin-right: 2%" class="btn btn-primary" (click)="deslogar()">Logout</button>
+    </div>
+
+    <div style="margin-top: 5%">
+      <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="submeterAluno()">Submissões</button>
+      <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="escolherTurmas()">Turmas</button>
+          
+      <div *ngIf="submeterAlunoA" style="margin-top: 5%">
+        <app-submeter-aluno></app-submeter-aluno>
+      </div>
+    
+      <div *ngIf="escolherTurmasA" style="margin-top: 5%">
+        <app-escolher-turma></app-escolher-turma>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <div *ngIf="coordenador">
+
+    <div>
+      <label>Bem vindo, Coordenador</label>
+      <button style="margin-left:2%;margin-right: 2%" class="btn btn-primary" (click)="deslogar()">Logout</button>
+    </div>
+    
+    <div style="margin-top: 5%">
+
+      <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="solicitacoesPendentes()">Solicitações Pendentes</button>
+      <button class="btn btn-primary" style="margin-left:2%;margin-right: 2%" (click)="avaliarPontoControle()">Avaliar Ponto de Controle</button>
+            
+      <div *ngIf="solicitacoesPendentesA" style="margin-top: 5%">
+        <app-solicitacoes-pendentes></app-solicitacoes-pendentes>
+      </div>
+      
+      <div *ngIf="avaliarPontoControleA" style="margin-top: 5%">
+        <app-avaliar-ponto-controle></app-avaliar-ponto-controle>
+      </div>
+
+    </div>
+    
+    
+  </div>
+</div> 
