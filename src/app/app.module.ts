@@ -18,6 +18,8 @@ import { SubmeterAlunoComponent } from './usuario/aluno/submeter-aluno/submeter-
 import { EscolherTurmaComponent } from './usuario/aluno/escolher-turma/escolher-turma.component';
 import { SolicitacoesPendentesComponent } from './usuario/coordenador/solicitacoes-pendentes/solicitacoes-pendentes.component';
 import { AvaliarPontoControleComponent } from './usuario/coordenador/avaliar-ponto-controle/avaliar-ponto-controle.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { AvaliarPontoControleComponent } from './usuario/coordenador/avaliar-pon
     AvaliarPontoControleComponent
   ],
   imports: [
+    [BrowserAnimationsModule],
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

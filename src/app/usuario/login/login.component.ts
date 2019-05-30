@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   aoEntrar(){
     this.estaLogado=false;
-    this.admin = true;
+    this.professor = true;
   }
 
   deslogar(){
